@@ -1,0 +1,19 @@
+
+body {
+    background-color: #000000;
+}
+
+.main {
+    background-color: #E6E6D3;
+    text-align: center; padding:
+    15px 10px; margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.right-align {
+    text-align: right;
+}
