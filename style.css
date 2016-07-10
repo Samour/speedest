@@ -1,13 +1,16 @@
 
 body {
-    background-color: #000000;
+    background-color: #f8f8ff;
 }
 
 .main {
-    background-color: #E6E6D3;
-    text-align: center; padding:
-    15px 10px; margin-top: 20px;
+    background-color: #fffff0;
+    text-align: center;
+    padding: 15px 10px;
+    margin-top: 20px;
     margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px #000000;
 }
 
 .left-align {
@@ -16,4 +19,13 @@ body {
 
 .right-align {
     text-align: right;
+}
+
+.main a {
+    color: #BFA22C;
+}
+
+.copyright {
+    font-size: 8px;
+    margin-bottom: 0px;
 }

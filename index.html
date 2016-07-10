@@ -1,14 +1,65 @@
+<!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Host Speed Test</title>
         <!-- Bootstrap from CDN -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <div class="main">
-            <h1>Test</h1>
-            <p>Testing page to check LAMP &amp; git working</p>
+        <div class="main col-sm-10 col-sm-offset-1">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>Speed Test</h1>
+                    <h5>This page will allow you to run a Speedtest.net test on the <b>page host</b>.</h5>
+                    <p>This package utilizes <a href="https://github.com/sivel/speedtest-cli" target="_blank">speedtest-cli by Matt Martz</a>, used under the Apache License v2.</p>
+                </div>
+            </div>
+            <br>
+            <div id="section-start" class="row">
+                <div class-"col-sm-12">
+                    <p>Click the button below to run a speed test on the server:</p>
+                    <p><button type="button" class="btn btn-success">Start Test</button></p>
+                </div>
+            </div>
+            <div id="section-running" class="row">
+                <div class="col-sm-12">
+                    <p>
+                        <h4 id="test-title">Starting test...|Testing from &lt;ISP&gt; (&lt;IPAddr&gt;)</h4>
+                    </p>
+                    <h5 id="message">Testing [Ping|Download|Upload]</h5>
+                    <p>Ping: &lt;Ping&gt;</p>
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <div class="progress">
+                            <div id="downbar" class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width: 100%">Download Speed: &lt;downsp&gt;</div>
+                        </div>
+                        <div class="progress">
+                            <div id="upbar" class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    <!-- Each segment hidden until it becomes active -->
+                </div>
+            </div>
+            <div id="section-complete" class="row">
+                <div class="col-sm-12">
+                    <h3>Test Results: &lt;IPAddr&gt; on &lt;ISP&gt;<h3>
+                    <h4>Test run against &lt;Server&gt; (&lt;Location&gt;) [&lt;Distance&gt;]<h4>
+                    <h5>Ping Result: &lt;ping&gt;</h5>
+                    <h5>Download speed: &lt;downsp&gt;</h5>
+                    <h5>Upload speed: &lt;upsp&gt;</h5>
+                    <button type="button" class="btn btn-default">Reset</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="copyright">
+                        &copy; 2016 Aaron Burke. Distributed under GNU DLP v3<br>
+                        <a href="https://github.com/Samour/speedtest" target="_blank">Source</a>
+                    </p>
+                </div>
+            </div>
         </div>
     </body>
 </html>
