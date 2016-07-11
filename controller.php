@@ -181,7 +181,7 @@ if (!isset($_GET["action"])) { // An action must be specified
     $response["response"] = "ACTION_MISSING";
     $response["message"] = "Please specify an action to perform";
     $response["actions"] = Array("start", "update", "retrieve", "cancel", "clear");
-    die($response);
+    die(json_encode($response));
 }
 
 $action = $_GET["action"];
