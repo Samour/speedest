@@ -90,7 +90,7 @@ function add_data($state) {
                 $data["data"]["isp"] = $comps[2];
                 $comps2 = explode(")", $comps[3]);
                 $data["data"]["ipaddr"] = trim($comps2[0], "(");
-                $state->results["isp"] = $data["data"]["isp"]
+                $state->results["isp"] = $data["data"]["isp"];
                 $state->results["ipaddr"] = $data["data"]["ipaddr"];
                 break;
             case 3: break;
