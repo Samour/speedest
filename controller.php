@@ -342,6 +342,8 @@ if (strcmp($action, "start") == 0) {
     }
     $status = proc_get_status($state->prochandle);
     if ($status === false) {
+        store_test($state);
+        start_next_test($state);
         unset($state->writelock);
         file_put_contents("var/state", serialize($state));
         $response["response"] = "SERVER_PROC_FAIL";
