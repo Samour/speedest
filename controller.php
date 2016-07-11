@@ -1,5 +1,7 @@
 <?php
 
+define("PY_DIR", "/var/www/py");
+
 session_start();
 
 header("Content-Type: application/json");
@@ -10,7 +12,7 @@ function start_next_test($state) {
     if (!isset($state->testqueue) || sizeof($state->testqueue)==0) {return;}
     $state->runningid = array_shift($state->testqueue); // Serve next client on queue
     // Open process to execute the test - results will be printed to stdout
-    $process = proc_open("../py/speedtest_cli.py", Array(1=>Array("pipe","w"), 2=>Array("pipe", "w")), $pipes);
+    $process = proc_open("speedtest_cli.py", Array(1=>Array("pipe","w"), 2=>Array("pipe", "w")), $pipes, PY_DIR);
     if (!is_resource($process)) { // Ensure process opened successfully
         unset($state->runningid);
         unset($state->prochandle);
