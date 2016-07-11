@@ -5,7 +5,7 @@ define("PY_DIR", "/var/www/py");
 session_start();
 
 header("Content-Type: application/json");
-
+try {
 $response = Array();
 
 function start_next_test($state) {
@@ -404,4 +404,9 @@ if (strcmp($action, "start") == 0) {
     $response["message"] = "Please specify an action to perform";
     $response["actions"] = Array("start", "update", "retrieve", "cancel", "clear");
     die($response);
+}
+
+} catch (Exception $e) {
+    $response = Array("DDEBUG_ERR", $e->getMessage());
+    die(json_encode($response));
 }
