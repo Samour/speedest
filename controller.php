@@ -246,7 +246,7 @@ if (strcmp($action, "start") == 0) {
         $response["message"] = "Test is already running on host. Your test has been queued.";
     }
     exit(json_encode($response));
-} else if (strcmp($action, "update")) {
+} else if (strcmp($action, "update") == 0) {
     $state = unserialize(file_get_contents("var/state"));
     while (isset($state->writelock) && $state->writelock != session_id()) {
         time_nanosleep(5000000);
@@ -371,7 +371,7 @@ if (strcmp($action, "start") == 0) {
     unset($state->writelock);
     file_put_contents("var/state", serialize($state));
     exit(json_encode($response));
-} else if (strcmp($action, "clear")) {
+} else if (strcmp($action, "clear") == 0) {
     $state = unserialize(file_get_contents("var/state"));
     while (isset($state->writelock) && $state->writelock != session_id()) {
         time_nanosleep(5000000);
